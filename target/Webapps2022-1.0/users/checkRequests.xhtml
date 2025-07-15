@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Check requested payments</title>
+    </h:head>
+    <h:body>
+        <h:outputLabel value="Approve or decline payment requests"/>
+        <br/>
+        <br/>
+        <br/>
+        <h:link value="Back to homepage" outcome="user"/>
+        <br/>
+        <h:dataTable value="#{dbViewBean.userRequests}" var="requests">
+            <h:column>
+                <f:facet name="header"> Request ID </f:facet>
+                    #{requests.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header"> Request From User </f:facet>
+                    #{requests.requestFromUser}
+            </h:column>
+            <h:column>
+                <f:facet name="header"> Amount Requested </f:facet>
+                    #{requests.amount}
+            </h:column>
+            <h:column>
+                <f:facet name="header"></f:facet>
+                <h:form>
+                    <h:commandButton value="Accept Request" action="#{requestTransactionBean.makeRequestPayment(requests.id)}"/>
+                </h:form>
+            </h:column>
+            <h:column>
+                <f:facet name="header"></f:facet>
+                <h:form>
+                    <h:commandButton value="Decline Request" action="#{requestTransactionBean.declineRequestPayment(requests.id)}"/>
+                </h:form>
+            </h:column>
+        </h:dataTable>
+        <h:form>
+            Logout: <h:commandButton value="Logout" action="#{loginBean.logout()}"/>
+        </h:form>
+        <br/>
+    </h:body>
+</html>

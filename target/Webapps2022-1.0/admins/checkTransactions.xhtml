@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Administrator page -- Check all transactions</title>
+    </h:head>
+    <h:body>
+        <h:outputLabel value="Administrator page -- Check all transactions"/>
+        <br/>
+        <br/>
+        <br/>
+        <h:link value="Back to admin homepage" outcome="admins"/>
+        <br/>
+        <h:dataTable value="#{dbViewBean.allTransactions}" var="transactions">
+            <h:column>
+                <f:facet name="header"> Transaction ID </f:facet>
+                    #{transactions.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header"> Sender User </f:facet>
+                    #{transactions.senderUsername}
+            </h:column>
+            <h:column>
+                <f:facet name="header"> Recipient User </f:facet>
+                    #{transactions.recipientUsername}
+            </h:column>
+             <h:column>
+                <f:facet name="header"> Amount Sent </f:facet>
+                    #{transactions.amount}
+            </h:column>
+        </h:dataTable>
+        <h:form>
+            Logout: <h:commandButton value="Logout" action="#{loginBean.logout()}"/>
+        </h:form>
+        <br/>
+    </h:body>
+</html>

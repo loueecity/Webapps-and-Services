@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Webapps Payment Service Administrator Page</title>
+    </h:head>
+    <h:body>
+         <h2>Admin Homepage</h2>
+        <h:outputLabel value="Please select which action you would like to do."/>
+        <br/>
+        <br/>
+        To check users <h:button outcome="checkUsers.xhtml?faces-redirect=true" value="click here"/>
+        <br/>
+        <br/>
+        To check all transactions <h:button outcome="checkTransactions.xhtml?faces-redirect=true" value="click here"/>
+        <br/>
+        <br/>
+        To register another admin <h:button outcome="registerAdmin.xhtml?faces-redirect=true" value="click here"/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <h:link value="Back to index" outcome="index"/>
+        <br/>
+        <h:form>
+            Logout: <h:commandButton value="Logout" action="#{loginBean.logout()}"/>
+        </h:form>
+        <br/>
+    </h:body>
+</html>

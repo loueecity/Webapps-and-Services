@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Webapps payment service user home</title>
+    </h:head>
+    <h:body>
+         <h2>User homepage</h2>
+        <h:outputLabel value="Please select which action you would like to do."/>
+        <br/>
+        <br/>
+        To send a payment <h:button outcome="sendPayments.xhtml?faces-redirect=true" value="click here"/>
+        <br/>
+        <br/>
+        To request a payment <h:button outcome="requestPayments.xhtml?faces-redirect=true" value="click here"/>
+        <br/>
+        <br/>
+        To check your requests <h:button outcome="checkRequests.xhtml?faces-redirect=true" value="click here"/>
+        <br/>
+        <br/>
+        To view your transaction history <h:button outcome="checkHistory.xhtml?faces-redirect=true" value="click here"/>
+        <br/>
+        <br/>
+        <h:link value="Back to index" outcome="index"/>
+        <br/>
+        <h:form>
+            Logout: <h:commandButton value="Logout" action="#{loginBean.logout()}"/>
+        </h:form>
+        <br/>
+    </h:body>
+</html>
+
